@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HI-CON Electrical & Air Conditioning | Sydney's Top-Rated Tradespeople</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+/* ─────────────────────────────────────
+   TOKENS
+───────────────────────────────────── */
+:root {
+  --bg:          #080c12;
+  --bg-2:        #0d1320;
+  --bg-card:     #111827;
+  --bg-card-2:   #0f1724;
+  --blue:        #3b7cf8;
+  --blue-dk:     #2563eb;
+  --blue-glow:   rgba(59,124,248,0.18);
+  --blue-border: rgba(59,124,248,0.3);
+  --orange:      #f97316;
+  --white:       #ffffff;
+  --light:       #f1f5f9;
+  --muted:       #64748b;
+  --dim:         #94a3b8;
+  --border:      rgba(255,255,255,0.07);
+  --border-2:    rgba(255,255,255,0.04);
+  --text-body:   rgba(255,255,255,0.7);
+  --text-sub:    rgba(255,255,255,0.45);
+
+  --r:    10px;
+  --r-lg: 16px;
+  --r-xl: 22px;
+  --max:  1160px;
+  --gut:  clamp(18px, 5vw, 64px);
+  --sec:  clamp(80px, 10vw, 130px);
+  --sh-blue: 0 8px 40px rgba(59,124,248,0.35);
+
+  --font: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+/* ─────────────────────────────────────
+   RESET
+───────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{font-family:var(--font);background:var(--bg);color:var(--white);overflow-x:hidden;line-height:1.6}
+img{display:block;max-width:100%}
+a{text-decoration:none}
+
+/* ─────────────────────────────────────
+   UTILITY
+───────────────────────────────────── */
+.inner{max-width:var(--max);margin:0 auto;padding:0 var(--gut)}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:.72rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;
+  color:var(--blue);margin-bottom:16px;
+}
+.eyebrow::before{content:'';width:18px;height:1px;background:var(--blue);flex-shrink:0}
+.section-h{
+  font-size:clamp(1.9rem,3.6vw,2.9rem);
+  font-weight:700;line-height:1.15;letter-spacing:-0.03em;color:#fff;
+  margin-bottom:14px;
+}
+.section-p{
+  font-size:1rem;color:var(--text-body);line-height:1.8;max-width:520px;
+}
+
+/* ─────────────────────────────────────
+   NAV
+───────────────────────────────────── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  height:68px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 var(--gut);
+  background:rgba(8,12,18,0);
+  backdrop-filter:blur(0px);
+  border-bottom:1px solid transparent;
+  transition:background .35s,backdrop-filter .35s,border-color .35s;
+}
+nav.scrolled{
+  background:rgba(8,12,18,0.92);
+  backdrop-filter:blur(20px) saturate(160%);
+  border-color:var(--border);
+}
+
+.nav-logo{display:flex;align-items:center;gap:11px}
+.nav-icon{
+  width:36px;height:36px;border-radius:9px;
+  background:var(--blue);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  box-shadow:0 0 18px rgba(59,124,248,0.5);
+}
+.nav-icon svg{width:18px;height:18px;fill:#fff}
+.nav-brand{line-height:1.1}
+.nav-name{font-size:.98rem;font-weight:700;color:#fff;letter-spacing:-.01em}
+.nav-sub{font-size:.62rem;color:var(--text-sub);letter-spacing:.3px;font-weight:400}
+
+.nav-links{display:flex;align-items:center;gap:30px}
+.nav-links a{font-size:.86rem;font-weight:500;color:rgba(255,255,255,.55);transition:color .15s}
+.nav-links a:hover{color:#fff}
+
+.nav-right{display:flex;align-items:center;gap:10px}
+.nav-tel{
+  font-size:.86rem;font-weight:600;color:rgba(255,255,255,.7);
+  transition:color .15s;display:flex;align-items:center;gap:6px;
+}
+.nav-tel:hover{color:#fff}
+.nav-tel svg{width:13px;height:13px;flex-shrink:0;opacity:.6}
+.btn-cta{
+  display:inline-flex;align-items:center;gap:7px;
+  background:var(--blue);color:#fff;
+  font-family:var(--font);font-weight:600;font-size:.84rem;
+  padding:9px 20px;border-radius:8px;border:none;cursor:pointer;
+  box-shadow:0 2px 12px rgba(59,124,248,.35),inset 0 1px 0 rgba(255,255,255,.12);
+  transition:background .15s,box-shadow .15s,transform .15s;letter-spacing:.01em;
+}
+.btn-cta:hover{background:var(--blue-dk);box-shadow:var(--sh-blue);transform:translateY(-1px)}
+
+/* ─────────────────────────────────────
+   HERO
+───────────────────────────────────── */
+.hero{
+  position:relative;
+  min-height:100svh;min-height:100vh;
+  display:flex;align-items:flex-end;
+  overflow:hidden;
+}
+
+/* Full-bleed background via CSS — Unsplash photo of a modern home interior with AC unit */
+.hero-bg{
+  position:absolute;inset:0;z-index:0;
+  background:
+    url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1800&q=80&auto=format&fit=crop')
+    center center / cover no-repeat;
+}
+
+/* Layered overlay for depth + readability */
+.hero-overlay{
+  position:absolute;inset:0;z-index:1;
+  background:
+    linear-gradient(
+      to right,
+      rgba(6,10,18,.96) 0%,
+      rgba(6,10,18,.75) 55%,
+      rgba(6,10,18,.3)  100%
+    ),
+    linear-gradient(
+      to top,
+      rgba(6,10,18,.9) 0%,
+      transparent 45%
+    );
+}
+
+/* Subtle blue vignette top-right */
+.hero-glow{
+  position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:
+    radial-gradient(ellipse 55% 65% at 72% 28%, rgba(59,124,248,.12) 0%, transparent 70%);
+}
+
+.hero-inner{
+  position:relative;z-index:3;
+  width:100%;
+  padding:0 var(--gut);
+  padding-bottom:clamp(60px,8vw,100px);
+  padding-top:140px;
+  max-width:var(--max);margin:0 auto;
+  display:flex;align-items:flex-end;
+}
+
+.hero-content{max-width:660px}
+
+.hero-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  border:1px solid rgba(59,124,248,.35);
+  background:rgba(59,124,248,.1);
+  border-radius:100px;
+  padding:5px 14px 5px 8px;
+  margin-bottom:28px;
+  backdrop-filter:blur(8px);
+  animation:fadeUp .6s ease both;
+}
+.hero-tag-dot{
+  width:22px;height:22px;border-radius:50%;
+  background:rgba(59,124,248,.2);border:1px solid rgba(59,124,248,.5);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.hero-tag-dot::after{
+  content:'';display:block;width:8px;height:8px;border-radius:50%;
+  background:var(--blue);animation:pulseBlue 2.2s ease-in-out infinite;
+}
+@keyframes pulseBlue{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.45;transform:scale(.8)}}
+.hero-tag span{font-size:.78rem;font-weight:500;color:rgba(255,255,255,.65);letter-spacing:.2px}
+.hero-tag strong{color:#fff;font-weight:600}
+
+.hero-h1{
+  font-size:clamp(2.6rem,5.5vw,4.8rem);
+  font-weight:800;line-height:1.06;
+  letter-spacing:-.035em;color:#fff;
+  margin-bottom:22px;
+  animation:fadeUp .7s .08s ease both;
+}
+.hero-h1 .accent{
+  background:linear-gradient(95deg,#60a5fa,var(--blue));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+
+.hero-desc{
+  font-size:clamp(.97rem,1.6vw,1.08rem);
+  color:rgba(255,255,255,.6);line-height:1.82;
+  max-width:490px;margin-bottom:38px;
+  animation:fadeUp .7s .16s ease both;font-weight:400;
+}
+
+.hero-btns{
+  display:flex;flex-wrap:wrap;gap:12px;margin-bottom:48px;
+  animation:fadeUp .7s .24s ease both;
+}
+.btn-hero-primary{
+  display:inline-flex;align-items:center;gap:9px;
+  background:var(--blue);color:#fff;
+  font-family:var(--font);font-weight:700;font-size:.96rem;
+  padding:14px 28px;border-radius:var(--r);border:none;cursor:pointer;
+  box-shadow:0 4px 24px rgba(59,124,248,.45),inset 0 1px 0 rgba(255,255,255,.15);
+  transition:background .15s,box-shadow .15s,transform .15s;
+}
+.btn-hero-primary:hover{background:var(--blue-dk);box-shadow:0 8px 36px rgba(59,124,248,.6);transform:translateY(-2px)}
+.btn-hero-primary svg{width:17px;height:17px;flex-shrink:0}
+.btn-hero-ghost{
+  display:inline-flex;align-items:center;gap:9px;
+  background:rgba(255,255,255,.07);color:rgba(255,255,255,.8);
+  font-family:var(--font);font-weight:600;font-size:.96rem;
+  padding:13px 26px;border-radius:var(--r);
+  border:1px solid rgba(255,255,255,.15);cursor:pointer;
+  backdrop-filter:blur(8px);
+  transition:background .15s,border-color .15s,color .15s,transform .15s;
+}
+.btn-hero-ghost:hover{background:rgba(255,255,255,.13);border-color:rgba(255,255,255,.28);color:#fff;transform:translateY(-2px)}
+.btn-hero-ghost svg{width:15px;height:15px;flex-shrink:0;opacity:.7}
+
+/* Hero proof bar */
+.hero-proof{
+  display:flex;flex-wrap:wrap;align-items:center;gap:20px;
+  animation:fadeUp .7s .32s ease both;
+  padding-top:28px;
+  border-top:1px solid rgba(255,255,255,.08);
+}
+.proof-item{display:flex;align-items:center;gap:8px}
+.proof-stars{display:flex;gap:2px}
+.proof-stars svg{width:13px;height:13px;fill:#f59e0b}
+.proof-text{font-size:.82rem;color:rgba(255,255,255,.5);font-weight:400}
+.proof-text strong{color:rgba(255,255,255,.8);font-weight:600}
+.proof-sep{width:1px;height:16px;background:rgba(255,255,255,.1)}
+.proof-lic{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:.76rem;font-weight:500;color:rgba(255,255,255,.4);
+}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+
+/* ─────────────────────────────────────
+   STATS
+───────────────────────────────────── */
+.stats{background:var(--bg-2);border-bottom:1px solid var(--border)}
+.stats-row{
+  display:flex;
+  max-width:var(--max);margin:0 auto;padding:0 var(--gut);
+  flex-wrap:wrap;
+}
+.stat-cell{
+  flex:1;min-width:150px;
+  padding:32px 0;
+  border-right:1px solid var(--border);
+  padding-left:36px;
+  transition:background .2s;
+}
+.stat-cell:first-child{padding-left:0}
+.stat-cell:last-child{border-right:none}
+.stat-cell:hover{background:rgba(59,124,248,.04)}
+.stat-num{
+  font-size:2.3rem;font-weight:800;line-height:1;
+  color:#fff;letter-spacing:-.04em;margin-bottom:5px;
+  display:flex;align-items:baseline;gap:2px;
+}
+.stat-num sup{font-size:1rem;color:var(--blue);font-weight:700;letter-spacing:0}
+.stat-lbl{font-size:.77rem;color:var(--text-sub);font-weight:500;letter-spacing:.3px}
+
+/* ─────────────────────────────────────
+   SERVICES
+───────────────────────────────────── */
+.services{padding:var(--sec) 0;background:var(--bg)}
+.services .inner{max-width:var(--max)}
+
+.services-top{
+  display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;
+  gap:24px;margin-bottom:52px;
+}
+
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:1px;
+  background:var(--border);
+  border-radius:var(--r-xl);
+  border:1px solid var(--border);
+  overflow:hidden;
+}
+.svc-card{
+  background:var(--bg-card);
+  padding:42px 38px;
+  position:relative;
+  transition:background .25s;
+  overflow:hidden;
+}
+.svc-card::after{
+  content:'';position:absolute;
+  top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(59,124,248,.4),transparent);
+  opacity:0;transition:opacity .3s;
+}
+.svc-card:hover{background:rgba(15,23,42,1)}
+.svc-card:hover::after{opacity:1}
+
+.svc-num{
+  font-size:.72rem;font-weight:700;color:var(--text-sub);
+  letter-spacing:2px;text-transform:uppercase;margin-bottom:24px;
+}
+.svc-icon{
+  width:46px;height:46px;border-radius:11px;
+  background:var(--blue-glow);
+  border:1px solid var(--blue-border);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:20px;
+  transition:background .25s,box-shadow .25s;
+}
+.svc-card:hover .svc-icon{
+  background:rgba(59,124,248,.25);
+  box-shadow:0 0 20px rgba(59,124,248,.3);
+}
+.svc-icon svg{stroke:var(--blue);transition:stroke .25s}
+.svc-h{
+  font-size:1.05rem;font-weight:700;color:#fff;
+  margin-bottom:10px;letter-spacing:-.01em;line-height:1.3;
+}
+.svc-p{font-size:.88rem;color:var(--text-body);line-height:1.75}
+.svc-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:18px}
+.svc-tag{
+  font-size:.7rem;font-weight:600;letter-spacing:.3px;
+  color:var(--blue);background:var(--blue-glow);
+  border:1px solid rgba(59,124,248,.2);
+  padding:3px 9px;border-radius:5px;
+}
+
+/* ─────────────────────────────────────
+   WHY SECTION
+───────────────────────────────────── */
+.why{padding:var(--sec) 0;background:var(--bg-2)}
+.why-head{text-align:center;margin-bottom:56px}
+.why-head .section-p{margin:0 auto}
+.why-head .section-h{margin-bottom:14px}
+
+.why-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;
+  background:var(--border);border:1px solid var(--border);
+  border-radius:var(--r-xl);overflow:hidden;
+}
+.why-card{
+  background:var(--bg-card-2);
+  padding:38px 30px;
+  transition:background .2s;
+  position:relative;
+}
+.why-card:hover{background:var(--bg-card)}
+.why-card-icon{
+  width:42px;height:42px;border-radius:10px;
+  background:var(--blue-glow);border:1px solid var(--blue-border);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.15rem;margin-bottom:20px;
+  transition:box-shadow .2s;
+}
+.why-card:hover .why-card-icon{box-shadow:0 0 18px rgba(59,124,248,.3)}
+.why-card h3{font-size:.97rem;font-weight:700;color:#fff;margin-bottom:9px;letter-spacing:-.01em}
+.why-card p{font-size:.86rem;color:var(--text-body);line-height:1.72}
+
+/* ─────────────────────────────────────
+   REVIEWS
+───────────────────────────────────── */
+.reviews{padding:var(--sec) 0;background:var(--bg)}
+.reviews-head{margin-bottom:52px}
+.reviews-head .section-h{margin-bottom:12px}
+
+.reviews-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;
+}
+.review-card{
+  background:var(--bg-card);
+  border:1px solid var(--border);
+  border-radius:var(--r-lg);padding:34px;
+  position:relative;overflow:hidden;
+  transition:border-color .2s,transform .2s,box-shadow .2s;
+}
+.review-card::before{
+  content:'\201C';position:absolute;top:12px;right:22px;
+  font-family:Georgia,serif;font-size:4.8rem;line-height:1;
+  color:var(--blue);opacity:.07;pointer-events:none;
+}
+.review-card:hover{
+  border-color:var(--blue-border);
+  transform:translateY(-3px);
+  box-shadow:0 16px 48px rgba(0,0,0,.3);
+}
+.review-stars{display:flex;gap:2px;margin-bottom:16px}
+.review-stars svg{width:13px;height:13px;fill:#f59e0b}
+.review-text{
+  font-size:.91rem;color:rgba(255,255,255,.65);
+  line-height:1.8;margin-bottom:22px;font-weight:400;
+}
+.review-footer{
+  display:flex;align-items:center;gap:11px;
+  padding-top:18px;border-top:1px solid var(--border);
+}
+.review-avatar{
+  width:38px;height:38px;border-radius:50%;
+  background:linear-gradient(135deg,var(--blue),#60a5fa);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:.85rem;color:#fff;flex-shrink:0;
+}
+.review-name{font-size:.88rem;font-weight:600;color:#fff;margin-bottom:2px}
+.review-src{
+  display:flex;align-items:center;gap:5px;
+  font-size:.73rem;color:var(--text-sub);
+}
+.g-dot{width:6px;height:6px;border-radius:50%;background:#4285F4;display:inline-block}
+
+/* ─────────────────────────────────────
+   CTA STRIP
+───────────────────────────────────── */
+.cta-strip{
+  padding:clamp(60px,7vw,90px) var(--gut);
+  background:linear-gradient(135deg,#0a1628 0%,#0d1f3c 50%,#091220 100%);
+  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  position:relative;overflow:hidden;
+}
+.cta-strip::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 60% 80% at 50% 50%,rgba(59,124,248,.12) 0%,transparent 70%);
+}
+.cta-inner{
+  max-width:700px;margin:0 auto;text-align:center;position:relative;
+}
+.cta-inner .eyebrow{justify-content:center}
+.cta-h{
+  font-size:clamp(1.9rem,3.5vw,2.8rem);font-weight:800;
+  color:#fff;letter-spacing:-.03em;line-height:1.12;margin-bottom:14px;
+}
+.cta-p{
+  font-size:1rem;color:var(--text-body);line-height:1.8;margin-bottom:36px;
+}
+.cta-btns{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+
+/* ─────────────────────────────────────
+   CONTACT
+───────────────────────────────────── */
+.contact{padding:var(--sec) 0;background:var(--bg-2)}
+.contact-grid{
+  display:grid;grid-template-columns:1fr 1.1fr;
+  gap:64px;align-items:start;
+  max-width:var(--max);margin:0 auto;padding:0 var(--gut);
+}
+.contact-info .section-h{margin-bottom:12px}
+.contact-info .section-p{margin-bottom:38px}
+
+.cinfo-row{
+  display:flex;align-items:flex-start;gap:14px;
+  padding:16px 18px;
+  background:var(--bg-card-2);
+  border:1px solid var(--border);
+  border-radius:var(--r);
+  margin-bottom:12px;
+  transition:border-color .2s;
+}
+.cinfo-row:hover{border-color:var(--blue-border)}
+.cinfo-icon{
+  width:38px;height:38px;flex-shrink:0;border-radius:9px;
+  background:var(--blue-glow);border:1px solid var(--blue-border);
+  display:flex;align-items:center;justify-content:center;font-size:.95rem;
+}
+.cinfo-body strong{
+  display:block;font-size:.72rem;font-weight:600;
+  color:var(--text-sub);letter-spacing:1px;text-transform:uppercase;margin-bottom:2px;
+}
+.cinfo-body a,.cinfo-body span{
+  font-size:.92rem;color:rgba(255,255,255,.8);font-weight:500;
+  transition:color .15s;
+}
+.cinfo-body a:hover{color:var(--blue)}
+
+.social-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  margin-top:16px;
+  font-size:.84rem;font-weight:500;color:rgba(255,255,255,.45);
+  border:1px solid var(--border);
+  padding:9px 15px;border-radius:8px;
+  transition:all .15s;
+}
+.social-btn:hover{border-color:var(--blue-border);color:rgba(255,255,255,.8)}
+
+/* Form */
+.contact-form{
+  background:var(--bg-card);
+  border:1px solid var(--border);
+  border-radius:var(--r-xl);padding:42px 38px;
+}
+.contact-form h3{
+  font-size:1.35rem;font-weight:700;color:#fff;
+  margin-bottom:26px;letter-spacing:-.02em;
+}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fg{margin-bottom:14px}
+.fg label{
+  display:block;font-size:.75rem;font-weight:600;
+  color:var(--text-sub);margin-bottom:6px;letter-spacing:.3px;
+  text-transform:uppercase;
+}
+.fg input,.fg select,.fg textarea{
+  width:100%;font-family:var(--font);font-size:.9rem;
+  color:#fff;background:var(--bg-2);
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:8px;padding:11px 14px;
+  outline:none;appearance:none;transition:border-color .15s,box-shadow .15s;
+  line-height:1.5;
+}
+.fg input::placeholder,.fg textarea::placeholder{color:rgba(255,255,255,.2)}
+.fg input:focus,.fg select:focus,.fg textarea:focus{
+  border-color:rgba(59,124,248,.6);
+  box-shadow:0 0 0 3px rgba(59,124,248,.12);
+}
+.fg select{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath fill='%2364748b' d='M0 0l5 6 5-6z'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 14px center;
+  padding-right:36px;cursor:pointer;
+}
+.fg select option{background:#111827;color:#fff}
+.fg textarea{height:108px;resize:vertical}
+.btn-form{
+  width:100%;background:var(--blue);color:#fff;border:none;cursor:pointer;
+  font-family:var(--font);font-weight:700;font-size:.94rem;
+  padding:14px 28px;border-radius:var(--r);
+  box-shadow:0 4px 20px rgba(59,124,248,.4),inset 0 1px 0 rgba(255,255,255,.12);
+  transition:background .15s,box-shadow .15s,transform .15s;
+  letter-spacing:.01em;margin-top:4px;
+}
+.btn-form:hover{background:var(--blue-dk);box-shadow:var(--sh-blue);transform:translateY(-1px)}
+
+/* ─────────────────────────────────────
+   FOOTER
+───────────────────────────────────── */
+footer{background:var(--bg);border-top:1px solid var(--border);padding:60px var(--gut) 30px}
+.footer-top{
+  max-width:var(--max);margin:0 auto;
+  display:flex;flex-wrap:wrap;gap:44px;
+  justify-content:space-between;align-items:flex-start;
+  padding-bottom:44px;border-bottom:1px solid var(--border);margin-bottom:28px;
+}
+.footer-brand{max-width:270px}
+.footer-logo{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.footer-brand p{font-size:.84rem;color:var(--text-sub);line-height:1.72}
+.footer-badge{
+  display:inline-flex;align-items:center;gap:6px;margin-top:14px;
+  font-size:.7rem;font-weight:600;letter-spacing:.5px;
+  color:var(--blue);background:var(--blue-glow);
+  border:1px solid var(--blue-border);padding:5px 10px;border-radius:5px;
+}
+.footer-col h4{
+  font-size:.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+  color:rgba(255,255,255,.85);margin-bottom:16px;
+}
+.footer-col a{
+  display:block;font-size:.86rem;color:var(--text-sub);
+  margin-bottom:9px;transition:color .15s;font-weight:400;
+}
+.footer-col a:hover{color:rgba(255,255,255,.8)}
+.footer-bottom{
+  max-width:var(--max);margin:0 auto;
+  display:flex;flex-wrap:wrap;gap:12px;
+  justify-content:space-between;align-items:center;
+  font-size:.78rem;color:rgba(255,255,255,.2);
+}
+
+/* ─────────────────────────────────────
+   FLOAT CALL (mobile)
+───────────────────────────────────── */
+.float-call{
+  display:none;position:fixed;bottom:20px;right:20px;z-index:300;
+  background:var(--blue);color:#fff;
+  width:54px;height:54px;border-radius:50%;
+  align-items:center;justify-content:center;
+  box-shadow:0 4px 24px rgba(59,124,248,.55);
+  transition:transform .2s,box-shadow .2s;
+}
+.float-call:hover{transform:scale(1.06);box-shadow:0 6px 30px rgba(59,124,248,.7)}
+
+/* ─────────────────────────────────────
+   REVEAL
+───────────────────────────────────── */
+.rv{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease}
+.rv.in{opacity:1;transform:none}
+
+/* ─────────────────────────────────────
+   RESPONSIVE
+───────────────────────────────────── */
+@media(max-width:1000px){
+  .services-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr;gap:44px;padding:0 var(--gut)}
+}
+@media(max-width:860px){
+  .nav-links{display:none}
+}
+@media(max-width:640px){
+  .btn-cta{display:none}
+  .hero-h1{font-size:clamp(2.2rem,9vw,3rem)}
+  .hero-btns{flex-direction:column}
+  .hero-btns a{justify-content:center;text-align:center}
+  .stat-cell{border-right:none;border-bottom:1px solid var(--border);padding-left:0}
+  .stat-cell:last-child{border-bottom:none}
+  .stats-row{flex-direction:column}
+  .form-row{grid-template-columns:1fr}
+  .contact-form{padding:28px 20px}
+  .footer-top{flex-direction:column;gap:32px}
+  .float-call{display:flex}
+  .footer-bottom{flex-direction:column;align-items:flex-start;gap:8px}
+}
+</style>
+</head>
+<body>
+
+<!-- Float call (mobile) -->
+<a href="tel:0466805111" class="float-call" aria-label="Call HI-CON">
+  <svg viewBox="0 0 24 24" fill="currentColor" width="21" height="21"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+</a>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-logo">
+    <div class="nav-icon">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 2L4.09 12.11A1 1 0 0 0 5 13.8h5.86L11 22l8.91-10.11A1 1 0 0 0 19 10.2h-5.86L13 2z"/></svg>
+    </div>
+    <div class="nav-brand">
+      <div class="nav-name">HI-CON</div>
+      <div class="nav-sub">Electrical &amp; Air Conditioning</div>
+    </div>
+  </div>
+
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#why">About</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <div class="nav-right">
+    <a href="tel:0466805111" class="nav-tel">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+      0466 805 111
+    </a>
+    <a href="#contact" class="btn-cta">Free Quote</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-glow"></div>
+
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-tag">
+        <div class="hero-tag-dot"></div>
+        <span><strong>Sydney's top-rated</strong> electrical &amp; air conditioning team</span>
+      </div>
+
+      <h1 class="hero-h1">
+        Electrical &amp; Air Conditioning Services,<br>
+        <span class="accent">Done Right.</span>
+      </h1>
+
+      <p class="hero-desc">
+        Professional, efficient, and immaculately finished — every time.
+        Led by May, Felix, and the expert HI-CON team serving all of Sydney and surrounds.
+      </p>
+
+      <div class="hero-btns">
+        <a href="tel:0466805111" class="btn-hero-primary">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+          Call 0466 805 111
+        </a>
+        <a href="#contact" class="btn-hero-ghost">
+          Get a Free Quote
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </div>
+
+      <div class="hero-proof">
+        <div class="proof-item">
+          <div class="proof-stars">
+            <svg viewBox="0 0 16 16"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.7 4.08L8 10.5l-3.7 1.95.7-4.08L2 5.5l4.15-.75z"/></svg>
+            <svg viewBox="0 0 16 16"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.7 4.08L8 10.5l-3.7 1.95.7-4.08L2 5.5l4.15-.75z"/></svg>
+            <svg viewBox="0 0 16 16"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.7 4.08L8 10.5l-3.7 1.95.7-4.08L2 5.5l4.15-.75z"/></svg>
+            <svg viewBox="0 0 16 16"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.7 4.08L8 10.5l-3.7 1.95.7-4.08L2 5.5l4.15-.75z"/></svg>
+            <svg viewBox="0 0 16 16"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.7 4.08L8 10.5l-3.7 1.95.7-4.08L2 5.5l4.15-.75z"/></svg>
+          </div>
+          <span class="proof-text"><strong>4.9</strong> from 75+ Google reviews</span>
+        </div>
+        <div class="proof-sep"></div>
+        <span class="proof-lic">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" width="13" height="13"><path d="M8 2l1.5 3L13 5.5l-2.5 2.5.6 3.5L8 9.8l-3.1 1.7.6-3.5L3 5.5 6.5 5z"/></svg>
+          NSW Licensed Electrical Contractor
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stats-row">
+    <div class="stat-cell rv">
+      <div class="stat-num">4.9<sup>★</sup></div>
+      <div class="stat-lbl">Google Rating</div>
+    </div>
+    <div class="stat-cell rv">
+      <div class="stat-num">75<sup>+</sup></div>
+      <div class="stat-lbl">Verified Reviews</div>
+    </div>
+    <div class="stat-cell rv">
+      <div class="stat-num">2<sup>+</sup></div>
+      <div class="stat-lbl">Technicians Per Job</div>
+    </div>
+    <div class="stat-cell rv">
+      <div class="stat-num">100<sup>%</sup></div>
+      <div class="stat-lbl">Licensed &amp; Insured</div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="inner">
+    <div class="services-top">
+      <div>
+        <div class="eyebrow">What We Do</div>
+        <h2 class="section-h">Expert services,<br>flawlessly delivered.</h2>
+      </div>
+      <p class="section-p">From split system installs to full switchboard upgrades — our licensed teams complete every job efficiently and immaculately.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="svc-card rv">
+        <div class="svc-num">01</div>
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" width="22" height="22"><path d="M12 3H5a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-7z"/><path d="M3 14h18M12 11v11M8 21h8"/></svg>
+        </div>
+        <div class="svc-h">Split System AC Installation</div>
+        <p class="svc-p">Expert installation of leading air conditioning brands for maximum comfort and energy efficiency in your home or office — completed in a fraction of the usual time.</p>
+        <div class="svc-tags">
+          <span class="svc-tag">Mitsubishi</span>
+          <span class="svc-tag">Daikin</span>
+          <span class="svc-tag">Fujitsu</span>
+        </div>
+      </div>
+
+      <div class="svc-card rv">
+        <div class="svc-num">02</div>
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" width="22" height="22"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M8 3v18M12 8h4M12 12h4M12 16h4M5 8h1M5 12h1M5 16h1"/></svg>
+        </div>
+        <div class="svc-h">Electrical Box &amp; Switchboard Upgrades</div>
+        <p class="svc-p">Full switchboard replacements and upgrades to keep your home safe, compliant, and ready for modern electrical demands — with zero hidden surprises.</p>
+        <div class="svc-tags">
+          <span class="svc-tag">Safety</span>
+          <span class="svc-tag">Compliance</span>
+          <span class="svc-tag">Upgrades</span>
+        </div>
+      </div>
+
+      <div class="svc-card rv">
+        <div class="svc-num">03</div>
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" width="22" height="22"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </div>
+        <div class="svc-h">LED Downlight Design &amp; Installation</div>
+        <p class="svc-p">Transform your spaces with beautifully designed LED lighting layouts — installed cleanly and efficiently. Energy-saving and elegantly finished every time.</p>
+        <div class="svc-tags">
+          <span class="svc-tag">Design</span>
+          <span class="svc-tag">Install</span>
+          <span class="svc-tag">Energy Saving</span>
+        </div>
+      </div>
+
+      <div class="svc-card rv">
+        <div class="svc-num">04</div>
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" width="22" height="22"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <div class="svc-h">Smoke Alarm Replacement &amp; Switch Repairs</div>
+        <p class="svc-p">Compliant smoke alarm installations and reliable switch repairs — keeping your family safe and your home running smoothly, done right the first time.</p>
+        <div class="svc-tags">
+          <span class="svc-tag">Safety</span>
+          <span class="svc-tag">Compliance</span>
+          <span class="svc-tag">Repairs</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why" id="why">
+  <div class="inner">
+    <div class="why-head">
+      <div class="eyebrow" style="justify-content:center">Why HI-CON</div>
+      <h2 class="section-h">The HI-CON difference.</h2>
+      <p class="section-p">Every job reflects our commitment to quality, speed, and honest pricing — exactly what our customers rave about.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card rv">
+        <div class="why-card-icon">⭐</div>
+        <h3>4.9 / 5 Star Rated</h3>
+        <p>Consistently top-rated across 75+ Google reviews. Our reputation is built job by job, customer by customer.</p>
+      </div>
+      <div class="why-card rv">
+        <div class="why-card-icon">⚡</div>
+        <h3>Fast &amp; Efficient Teams</h3>
+        <p>Multiple licensed technicians arrive per job — so what takes others all day, we complete in a fraction of the time.</p>
+      </div>
+      <div class="why-card rv">
+        <div class="why-card-icon">✨</div>
+        <h3>Incredibly Neat Work</h3>
+        <p>We leave your home exactly as we found it — clean, tidy, and with meticulous attention to every finishing detail.</p>
+      </div>
+      <div class="why-card rv">
+        <div class="why-card-icon">💰</div>
+        <h3>Transparent Pricing</h3>
+        <p>No hidden fees. No surprises. Just honest, upfront quotes that give you full value for every dollar spent.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="reviews">
+  <div class="inner">
+    <div class="reviews-head">
+      <div class="eyebrow">Customer Reviews</div>
+      <h2 class="section-h">What our customers say.</h2>
+      <p class="section-p">Real words from real Sydney homeowners. This is why we do what we do.</p>
+    </div>
+    <div class="reviews-grid">
+
+      <div class="review-card rv">
+        <div class="review-stars">
+          <svg viewBox="0 0 16 16"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.7 4.08L8 10.5l-3.7 1.95.7-4.08L2 5.5l4.15-.75z"/></svg>
+          <svg viewBox="0 0 16 16"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.7 4.08L8 10.5l-3.7 1.95.7-4.08L2 5.5l4.15-.75z"/></svg>
+          <svg viewBox="0 0 16 16"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.7 4.08L8 10.5l-3.7 1.95.7-4.08L2 5.5l4.15-.75z"/></svg>
+          <svg viewBox="0 0 16 16"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.7 4.08L8 10.5l-3.7 1.95.7-4.08L2 5.5l4.15-.75z"/></svg>
+          <svg viewBox="0 0 16 16"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.7 4.08L8 10.5l-3.7 1.95.7-4.08L2 5.5l4.15-.75z"/></svg>
+        </div>
+        <p class="review-text">I have nothing but the highest praise for May and her team, who installed one split system for me last week. Four people rocked up and efficiently — and incredibly neatly — completed the job in under two hours.</p>
+        <div class="review-footer">
+          <div class="review-avatar">D</div>
+          <div>
+            <div class="review-name">Dylan</div>
+            <div class="review-src"><span class="g-dot"></span> Google Review</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card rv">
+        <div class="review-stars">
+          <svg viewBox="0 0 16 16"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.7 4.08L8 10.5l-3.7 1.95.7-4.08L2 5.5l4.15-.75z"/></svg>
+          <svg viewBox="0 0 16 16"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.7 4.08L8 10.5l-3.7 1.95.7-4.08L2 5.5l4.15-.75z"/></svg>
+          <svg viewBox="0 0 16 16"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.7 4.08L8 10.5l-3.7 1.95.7-4.08L2 5.5l4.15-.75z"/></svg>
+          <svg viewBox="0 0 16 16"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.7 4.08L8 10.5l-3.7 1.95.7-4.08L2 5.5l4.15-.75z"/></svg>
+          <svg viewBox="0 0 16 16"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.7 4.08L8 10.5l-3.7 1.95.7-4.08L2 5.5l4.15-.75z"/></svg>
+        </div>
+        <p class="review-text">I am thrilled with the work May and her husband's team performed at my house. They completed a significant upgrade of my electrical box and the full installation of my air conditioning units. Highly professional, meticulous.</p>
+        <div class="review-footer">
+          <div class="review-avatar">E</div>
+          <div>
+            <div class="review-name">Ella</div>
+            <div class="review-src"><span class="g-dot"></span> Google Review</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card rv">
+        <div class="review-stars">
+          <svg viewBox="0 0 16 16"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.7 4.08L8 10.5l-3.7 1.95.7-4.08L2 5.5l4.15-.75z"/></svg>
+          <svg viewBox="0 0 16 16"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.7 4.08L8 10.5l-3.7 1.95.7-4.08L2 5.5l4.15-.75z"/></svg>
+          <svg viewBox="0 0 16 16"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.7 4.08L8 10.5l-3.7 1.95.7-4.08L2 5.5l4.15-.75z"/></svg>
+          <svg viewBox="0 0 16 16"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.7 4.08L8 10.5l-3.7 1.95.7-4.08L2 5.5l4.15-.75z"/></svg>
+          <svg viewBox="0 0 16 16"><path d="M8 1l1.85 3.75L14 5.5l-3 2.92.7 4.08L8 10.5l-3.7 1.95.7-4.08L2 5.5l4.15-.75z"/></svg>
+        </div>
+        <p class="review-text">Hi-Con did an amazing job installing 4 units of Mitsubishi split systems. We had an old ducted centralised air conditioner which was broken and consumed too much power. Affordable and highly recommended.</p>
+        <div class="review-footer">
+          <div class="review-avatar">B</div>
+          <div>
+            <div class="review-name">Bill Woo</div>
+            <div class="review-src"><span class="g-dot"></span> Google Review</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA STRIP -->
+<div class="cta-strip">
+  <div class="cta-inner">
+    <div class="eyebrow">Ready to Get Started?</div>
+    <h2 class="cta-h">Let's book your job today.</h2>
+    <p class="cta-p">We respond fast, quote honestly, and show up ready to work. Available daily until 11 PM across all of Sydney.</p>
+    <div class="cta-btns">
+      <a href="tel:0466805111" class="btn-hero-primary">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        Call 0466 805 111
+      </a>
+      <a href="#contact" class="btn-hero-ghost">Request a Free Quote</a>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <div class="eyebrow">Get in Touch</div>
+      <h2 class="section-h">Let's get<br>started.</h2>
+      <p class="section-p">Ready for a fast, professional quote? Reach out today — we're available daily until 11 PM.</p>
+
+      <div class="cinfo-row rv">
+        <div class="cinfo-icon">📞</div>
+        <div class="cinfo-body">
+          <strong>Phone</strong>
+          <a href="tel:0466805111">0466 805 111</a>
+        </div>
+      </div>
+
+      <div class="cinfo-row rv">
+        <div class="cinfo-icon">🕙</div>
+        <div class="cinfo-body">
+          <strong>Hours</strong>
+          <span>Open daily until 11 PM</span>
+        </div>
+      </div>
+
+      <div class="cinfo-row rv">
+        <div class="cinfo-icon">📍</div>
+        <div class="cinfo-body">
+          <strong>Service Area</strong>
+          <span>Sydney &amp; Surrounding Areas, NSW</span>
+        </div>
+      </div>
+
+      <a href="#" class="social-btn">
+        <svg viewBox="0 0 24 24" fill="#1877F2" width="15" height="15"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        Follow on Facebook
+      </a>
+    </div>
+
+    <div class="contact-form rv">
+      <h3>Request a Free Quote</h3>
+      <div class="form-row">
+        <div class="fg">
+          <label>First Name</label>
+          <input type="text" placeholder="John">
+        </div>
+        <div class="fg">
+          <label>Last Name</label>
+          <input type="text" placeholder="Smith">
+        </div>
+      </div>
+      <div class="fg">
+        <label>Phone Number</label>
+        <input type="tel" placeholder="04XX XXX XXX">
+      </div>
+      <div class="fg">
+        <label>Email Address</label>
+        <input type="email" placeholder="john@example.com">
+      </div>
+      <div class="fg">
+        <label>Service Required</label>
+        <select>
+          <option value="">Select a service…</option>
+          <option>Split System AC Installation</option>
+          <option>Electrical Box / Switchboard Upgrade</option>
+          <option>LED Downlight Installation</option>
+          <option>Smoke Alarm Replacement</option>
+          <option>Switch Repairs</option>
+          <option>Other / General Enquiry</option>
+        </select>
+      </div>
+      <div class="fg">
+        <label>Tell Us About Your Job</label>
+        <textarea placeholder="Describe your project, property type, number of units, or any other details…"></textarea>
+      </div>
+      <button class="btn-form" type="button">Send Free Quote Request →</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <div class="nav-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 2L4.09 12.11A1 1 0 0 0 5 13.8h5.86L11 22l8.91-10.11A1 1 0 0 0 19 10.2h-5.86L13 2z"/></svg>
+        </div>
+        <div class="nav-brand">
+          <div class="nav-name">HI-CON</div>
+          <div class="nav-sub">Electrical &amp; Air Conditioning</div>
+        </div>
+      </div>
+      <p>Sydney's top-rated electrical and air conditioning specialists. Licensed, insured, and trusted by hundreds of homeowners.</p>
+      <div class="footer-badge">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" width="11" height="11"><path d="M8 2l1.5 3L13 5.5l-2.5 2.5.6 3.5L8 9.8l-3.1 1.7.6-3.5L3 5.5 6.5 5z"/></svg>
+        NSW Licensed Electrical Contractor
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <a href="#services">Split System AC Installation</a>
+      <a href="#services">Switchboard Upgrades</a>
+      <a href="#services">LED Downlights</a>
+      <a href="#services">Smoke Alarms</a>
+      <a href="#services">Switch Repairs</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="#why">Why HI-CON</a>
+      <a href="#reviews">Customer Reviews</a>
+      <a href="#contact">Get a Quote</a>
+      <a href="#">Facebook Page</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="tel:0466805111">0466 805 111</a>
+      <a href="#contact">Open Daily Until 11 PM</a>
+      <a href="#contact">Sydney, NSW</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 HI-CON Electrical &amp; Air Conditioning PTY LTD. All rights reserved.</span>
+    <span>Sydney, NSW, Australia</span>
+  </div>
+</footer>
+
+<script>
+  // Nav scroll behaviour
+  const nav = document.getElementById('navbar');
+  const onScroll = () => {
+    nav.classList.toggle('scrolled', window.scrollY > 24);
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Smooth anchor scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href');
+      if (id === '#') return;
+      const el = document.querySelector(id);
+      if (el) {
+        e.preventDefault();
+        window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 76, behavior: 'smooth' });
+      }
+    });
+  });
+
+  // Scroll reveal with stagger
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const siblings = [...entry.target.closest('section, div')?.querySelectorAll('.rv') ?? []];
+      const idx = siblings.indexOf(entry.target);
+      setTimeout(() => entry.target.classList.add('in'), Math.min(idx, 5) * 80);
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.rv').forEach(el => observer.observe(el));
+
+  // Form submit
+  document.querySelector('.btn-form').addEventListener('click', function () {
+    this.textContent = '✓ Request sent — we\'ll be in touch shortly.';
+    this.style.background = '#16a34a';
+    this.disabled = true;
+  });
+</script>
+</body>
+</html>
